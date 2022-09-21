@@ -8,16 +8,16 @@ const Viewers = () => {
         <img src='/images/viewers-disney.png'></img>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-disney.png'></img>
+        <img src='/images/viewers-pixar.png'></img>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-disney.png'></img>
+        <img src='/images/viewers-marvel.png'></img>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-disney.png'></img>
+        <img src='/images/viewers-starwars.png'></img>
       </Wrap>
       <Wrap>
-        <img src='/images/viewers-disney.png'></img>
+        <img src='/images/viewers-national.png'></img>
       </Wrap>
     </Container>
   )
@@ -39,5 +39,11 @@ const Wrap = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    &:hover{
+        box-shadow: rgb(0 0 0 /80%) 0px 0px 40px 58px -16px rgb(0 0 0 /72%) 0px 30px 22px -10px;
+        transform: scale(1.05);
+        border-color: rgba(249, 249, 249, 0.8);
+
     }
 `
