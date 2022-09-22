@@ -5,10 +5,13 @@ import Viewers from './Viewers'
 import Movies from './Movies'
 import db from '../firebase'
 import { collection, DocumentSnapshot, getDocs } from '@firebase/firestore'
+import { useDispatch } from 'react-redux'
+import { setMovies } from '../features/movie/movieSlice'
 
 const Home = () => {
 
   const moviesCollectionRef = collection(db, "movies")
+  const dispatch = useDispatch();
 
   //only on first render
   useEffect(()=>{
@@ -18,6 +21,7 @@ const Home = () => {
         return {id: doc.id, ...doc.data()}
       })
       // console.log(tempMovies)
+      dispatch(setMovies(tempMovies))
     }
     getMovies()
   },[])
