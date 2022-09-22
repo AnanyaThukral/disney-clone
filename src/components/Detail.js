@@ -1,7 +1,21 @@
-import React from 'react'
+import {React, useEffect, useState} from 'react'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
+import db from '../firebase'
+import { collection, doc, getDoc, getDocs } from '@firebase/firestore'
 
 const Detail = () => {
+
+  const {id} = useParams();
+  const moviesCollectionRef = collection(db, "movies")
+  const [movie, setMovie] = useState();
+  // console.log(id)
+
+  useEffect(()=>{
+    const data = getDocs(moviesCollectionRef)
+    setMovie(data.docs.map(doc => ({...doc.data()})))
+  })
+
   return (
     <Container>
       <Background>

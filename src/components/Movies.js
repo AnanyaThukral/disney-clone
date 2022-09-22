@@ -1,35 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
+import {selectMovies } from '../features/movie/movieSlice'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Movies = () => {
+
+    const movies = useSelector(selectMovies);
+
+    // console.log(movies)
+
   return (
     <Container>
       <h4>Recommended For You</h4>
       <Content>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
-        <Wrap>
-            <img src='https://cloudfront-us-east-1.images.arcpublishing.com/copesa/UDOAFC5T4JDS7L4RRYGNNFD3ZE.jpg'></img>
-        </Wrap>
+        {/* If movies exist */}
+        {movies &&
+            movies.map((movie)=>{
+                <Wrap key={movie.id}>
+                    <Link to={`/detail/${movie.id}`}>
+                        <img src={movie.cardImg}/>
+                    </Link>
+                </Wrap>
+            })
+        }
       </Content>
     </Container>
   )
