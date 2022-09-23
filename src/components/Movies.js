@@ -22,6 +22,7 @@ const Movies = () => {
                         <img src={movie.cardImg}/>
                     </Link>
                 </Wrap>
+                 console.log(movie.cardImg)
             })
         }
       </Content>

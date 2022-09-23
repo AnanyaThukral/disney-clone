@@ -19,7 +19,7 @@ const Detail = () => {
   return (
     <Container>
       <Background>
-        <img src='https://cdn.vox-cdn.com/thumbor/wJ71E7nJ_4Wj0btm5seEnHNJ4Xk=/0x0:4096x2304/1200x800/filters:focal(1973x1175:2627x1829)/cdn.vox-cdn.com/uploads/chorus_image/image/60190709/BO_RGB_s120_22a_cs_pub.pub16.318.0.jpg'></img>
+        <img src= {movie.backgroundImg}/>
       </Background>
       <ImageTilte></ImageTilte>
       <Controls>
